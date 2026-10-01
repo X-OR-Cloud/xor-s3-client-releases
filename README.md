@@ -69,24 +69,25 @@ Sau khi cài, mở **X-OR S3 Client** từ menu ứng dụng. Với AppImage: `c
 
 ## 2. Kết nối X-OR Object Storage
 
-Bạn cần 3 thông tin do X-OR Cloud cấp: **Endpoint URL**, **Access Key ID** và **Secret Access Key**.
+Ứng dụng đã cài sẵn endpoint X-OR Object Storage (`https://s3.xorcloud.net`). Bạn chỉ cần **Access Key ID** và **Secret Access Key** do X-OR Cloud cấp.
 
 ![Màn hình chào](images/01-welcome.png)
 
 1. Mở ứng dụng, bấm **CONNECT ACCOUNT**, sau đó **CREATE NEW PROFILE**.
-2. Điền thông tin:
+2. Form mở sẵn kiểu kết nối **X-OR Object Storage (s3.xorcloud.net)** với tên profile `X-OR S3`. Nhập:
 
    | Trường | Nhập |
    | --- | --- |
-   | Profile Name | Tên gợi nhớ, ví dụ `X-OR Storage` |
-   | Authentication Method | Chọn **Custom S3 / Compatibility Mode** |
-   | Endpoint URL | Endpoint X-OR cấp, có `https://` ở đầu |
-   | Access Key ID / Secret Access Key | Cặp khoá X-OR cấp |
-   | Default Region | Giữ `us-east-1` nếu X-OR không yêu cầu khác |
+   | Access Key ID | Access key X-OR cấp |
+   | Secret Access Key | Secret key X-OR cấp |
+   | Profile Name | Giữ `X-OR S3` hoặc đặt tên khác, ví dụ `X-OR S3 · Dự án A` |
+   | Default Region | Giữ `default` (mặc định của X-OR Object Storage) |
 
 3. Bấm **TEST CONNECTION** để kiểm tra, rồi **CONNECT ACCOUNT** để lưu.
 
 ![Thêm kết nối](images/02-connect.png)
+
+Cần kết nối tới một S3 khác (MinIO, AWS…)? Đổi **Authentication Method** sang **Custom S3 / Compatibility Mode** và nhập endpoint riêng.
 
 > Secret Access Key được lưu trong kho khoá của hệ điều hành (Keychain trên macOS, Credential Manager trên Windows, Secret Service trên Linux), không lưu dạng văn bản thường.
 
@@ -178,7 +179,7 @@ Mở **Settings** ở thanh bên:
 
 | Hiện tượng | Cách xử lý |
 | --- | --- |
-| Không kết nối được | Kiểm tra Endpoint URL có `https://`, máy có vào được mạng X-OR (VPN nếu cần), Access Key và Secret đúng. Bấm **TEST CONNECTION** để xem thông báo lỗi chi tiết. |
+| Không kết nối được | Kiểm tra máy truy cập được `https://s3.xorcloud.net` (VPN nếu cần), Access Key và Secret đúng. Bấm **TEST CONNECTION** để xem thông báo lỗi chi tiết. |
 | Kết nối được nhưng không thấy bucket | Tài khoản có thể không có quyền liệt kê bucket. Gõ thẳng `s3://ten-bucket/` vào ô đường dẫn. |
 | `Access Denied` khi tải lên/xoá | Tài khoản chỉ có quyền đọc với bucket đó. Liên hệ X-OR Cloud để được cấp quyền. |
 | macOS báo app bị hỏng | Chạy lệnh `xattr` ở [mục 1](#1-cài-đặt). |
