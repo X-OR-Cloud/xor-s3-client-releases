@@ -1,16 +1,17 @@
 <p align="center">
-  <img src="images/app-icon.png" width="112" alt="X-OR S3 Client">
+  <img src="images/app-icon.png" width="112" alt="X-OR Data">
 </p>
 
-<h1 align="center">X-OR S3 Client</h1>
+<h1 align="center">X-OR Data</h1>
 
 <p align="center">
   Ứng dụng desktop để quản lý dữ liệu trên <b>X-OR Object Storage</b> ngay trên máy tính cá nhân.<br>
   Chuột phải vào file trong Explorer / Finder để tải thẳng lên bucket.<br>
+  Đồng bộ và sao lưu 3-2-1 với ổ đĩa, server, OneDrive, Google Drive, có chốt chặn ransomware.<br>
   macOS · Windows · Linux
 </p>
 
-> Trang này chứa **bộ cài đặt** và **hướng dẫn sử dụng** X-OR S3 Client. Tải về không cần tài khoản GitHub.
+> Trang này chứa **bộ cài đặt** và **hướng dẫn sử dụng** X-OR Data. Tải về không cần tài khoản GitHub.
 
 ![Màn hình duyệt dữ liệu](images/03-browse.png)
 
@@ -23,9 +24,10 @@
 5. [Tải lên bằng chuột phải, không cần mở ứng dụng](#5-tải-lên-bằng-chuột-phải)
 6. [Xem và sửa file](#6-xem-và-sửa-file)
 7. [Thao tác với file: chia sẻ link, đổi tên, xoá](#7-thao-tác-với-file)
-8. [Đồng bộ thư mục từ máy lên bucket](#8-đồng-bộ-thư-mục)
-9. [Cài đặt ứng dụng](#9-cài-đặt-ứng-dụng)
-10. [Xử lý sự cố](#10-xử-lý-sự-cố)
+8. [Đồng bộ thư mục từ máy lên bucket (một lần)](#8-đồng-bộ-thư-mục)
+9. [Đồng bộ và sao lưu 3-2-1: ổ đĩa, server, OneDrive, Google Drive](#9-đồng-bộ-và-sao-lưu-3-2-1)
+10. [Cài đặt ứng dụng](#10-cài-đặt-ứng-dụng)
+11. [Xử lý sự cố](#11-xử-lý-sự-cố)
 
 ---
 
@@ -35,34 +37,34 @@ Tải bộ cài theo máy của bạn. Các link luôn trỏ tới phiên bản 
 
 | Hệ điều hành | Tải về |
 | --- | --- |
-| macOS chip Intel | [xor-s3-client_macos_x64.dmg](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_macos_x64.dmg) |
-| macOS Apple Silicon (M1–M4) | [xor-s3-client_macos_arm64.dmg](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_macos_arm64.dmg) |
-| Windows 10/11 | [xor-s3-client_windows_x64-setup.exe](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_windows_x64-setup.exe) hoặc [.msi](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_windows_x64.msi) |
-| Windows (không cần cài) | [xor-s3-client_windows_x64-portable.zip](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_windows_x64-portable.zip) |
-| Ubuntu / Debian | [xor-s3-client_linux_amd64.deb](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_linux_amd64.deb) |
-| Fedora / RHEL | [xor-s3-client_linux_x86_64.rpm](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_linux_x86_64.rpm) |
-| Linux khác | [xor-s3-client_linux_amd64.AppImage](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_linux_amd64.AppImage) |
-| Linux ARM64 | [deb](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_linux_arm64.deb) · [rpm](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_linux_aarch64.rpm) · [AppImage](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_linux_aarch64.AppImage) |
+| macOS chip Intel | [xor-data_macos_x64.dmg](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_macos_x64.dmg) |
+| macOS Apple Silicon (M1–M4) | [xor-data_macos_arm64.dmg](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_macos_arm64.dmg) |
+| Windows 10/11 | [xor-data_windows_x64-setup.exe](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64-setup.exe) hoặc [.msi](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64.msi) |
+| Windows (không cần cài) | [xor-data_windows_x64-portable.zip](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64-portable.zip) |
+| Ubuntu / Debian | [xor-data_linux_amd64.deb](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_amd64.deb) |
+| Fedora / RHEL | [xor-data_linux_x86_64.rpm](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_x86_64.rpm) |
+| Linux khác | [xor-data_linux_amd64.AppImage](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_amd64.AppImage) |
+| Linux ARM64 | [deb](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_arm64.deb) · [rpm](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_aarch64.rpm) · [AppImage](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_aarch64.AppImage) |
 
 Mã kiểm tra SHA-256 của từng file: [SHA256SUMS.txt](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/SHA256SUMS.txt).
 
-**macOS:** mở file `.dmg`, kéo **X-OR S3 Client** vào thư mục **Applications**, rồi mở từ Launchpad. Ứng dụng đã được ký bằng chứng thư Developer ID của X-OR Cloud và được Apple công chứng (notarized), nên mở được ngay mà không cần thao tác thêm.
+**macOS:** mở file `.dmg`, kéo **X-OR Data** vào thư mục **Applications**, rồi mở từ Launchpad. Ứng dụng đã được ký bằng chứng thư Developer ID của X-OR Cloud và được Apple công chứng (notarized), nên mở được ngay mà không cần thao tác thêm.
 
-**Windows:** chạy file `-setup.exe`, sau đó mở **X-OR S3 Client** từ Start menu. Nếu Windows SmartScreen hiện cảnh báo, chọn **More info → Run anyway**. Bộ cài đã kèm sẵn WebView2 nên cài được cả trên máy không có Internet.
+**Windows:** chạy file `-setup.exe`, sau đó mở **X-OR Data** từ Start menu. Nếu Windows SmartScreen hiện cảnh báo, chọn **More info → Run anyway**. Bộ cài đã kèm sẵn WebView2 nên cài được cả trên máy không có Internet.
 
 **Linux:**
 
 ```bash
-sudo apt install ./xor-s3-client_linux_amd64.deb      # Ubuntu / Debian
-sudo dnf install ./xor-s3-client_linux_x86_64.rpm     # Fedora / RHEL
+sudo apt install ./xor-data_linux_amd64.deb      # Ubuntu / Debian
+sudo dnf install ./xor-data_linux_x86_64.rpm     # Fedora / RHEL
 ```
 
-Sau khi cài, mở **X-OR S3 Client** từ menu ứng dụng. Với AppImage: `chmod +x xor-s3-client_linux_amd64.AppImage` rồi chạy trực tiếp.
+Sau khi cài, mở **X-OR Data** từ menu ứng dụng. Với AppImage: `chmod +x xor-data_linux_amd64.AppImage` rồi chạy trực tiếp.
 
 **Nhúng link tải vào website:** các link trong bảng trên là cố định và luôn trỏ tới bản mới nhất, nên chỉ cần nhúng một lần, ví dụ:
 
 ```html
-<a href="https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-s3-client_macos_x64.dmg">Tải X-OR S3 Client cho macOS (Intel)</a>
+<a href="https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_macos_x64.dmg">Tải X-OR Data cho macOS (Intel)</a>
 ```
 
 ## 2. Kết nối X-OR Object Storage
@@ -72,20 +74,19 @@ Sau khi cài, mở **X-OR S3 Client** từ menu ứng dụng. Với AppImage: `c
 ![Màn hình chào](images/01-welcome.png)
 
 1. Mở ứng dụng, bấm **CONNECT ACCOUNT**, sau đó **CREATE NEW PROFILE**.
-2. Form mở sẵn kiểu kết nối **X-OR Object Storage (s3.xorcloud.net)** với tên profile `X-OR S3`. Nhập:
+2. Form có sẵn endpoint `https://s3.xorcloud.net` và tên profile `X-OR S3`. Nhập:
 
    | Trường | Nhập |
    | --- | --- |
    | Access Key ID | Access key X-OR cấp |
    | Secret Access Key | Secret key X-OR cấp |
    | Profile Name | Giữ `X-OR S3` hoặc đặt tên khác, ví dụ `X-OR S3 · Dự án A` |
-   | Default Region | Giữ `default` (mặc định của X-OR Object Storage) |
 
 3. Bấm **TEST CONNECTION** để kiểm tra, rồi **CONNECT ACCOUNT** để lưu.
 
 ![Thêm kết nối](images/02-connect.png)
 
-Cần kết nối tới một S3 khác (MinIO, AWS…)? Đổi **Authentication Method** sang **Custom S3 / Compatibility Mode** và nhập endpoint riêng.
+Ứng dụng **chỉ kết nối tới X-OR Object Storage**. Profile tạo từ bản cũ trỏ tới AWS hoặc S3 khác vẫn hiện trong danh sách nhưng có nhãn **Locked**: mở profile đó để nhập access key X-OR (chuyển sang X-OR), hoặc xoá đi.
 
 > Secret Access Key được lưu trong kho khoá của hệ điều hành (Keychain trên macOS, Credential Manager trên Windows, Secret Service trên Linux), không lưu dạng văn bản thường.
 
@@ -149,7 +150,7 @@ Trong cửa sổ **Upload to X-OR S3**:
 | --- | --- |
 | Windows 10 | Chuột phải vào file/thư mục → **Upload to X-OR S3** |
 | Windows 11 | Chuột phải → **Show more options** (hoặc giữ Shift khi chuột phải) → **Upload to X-OR S3**. Cách khác: chuột phải → **Send to → Upload to X-OR S3** |
-| macOS | Chuột phải trong Finder → **Quick Actions** → **Upload to X-OR S3…** hoặc **Upload to X-OR S3 › *đích đã ghim***. Cũng có thể kéo file thả vào biểu tượng ứng dụng trên Dock, hoặc **Open With → X-OR S3 Client** |
+| macOS | Chuột phải trong Finder → **Quick Actions** → **Upload to X-OR S3…** hoặc **Upload to X-OR S3 › *đích đã ghim***. Cũng có thể kéo file thả vào biểu tượng ứng dụng trên Dock, hoặc **Open With → X-OR Data** |
 | Ubuntu (GNOME Files) | Chuột phải → **Scripts** → **Upload to X-OR S3** |
 | KDE (Dolphin) | Chuột phải → **Actions** → **Upload to X-OR S3** |
 
@@ -157,7 +158,7 @@ Chọn nhiều file một lúc cũng được: ứng dụng gom thành một l�
 
 **Khay hệ thống:** biểu tượng X-OR ở khay (góc dưới bên phải trên Windows, thanh menu trên macOS) cho biết tiến độ chung khi đang tải. Khi xong, hệ điều hành hiện thông báo. Bấm vào biểu tượng để mở lại cửa sổ.
 
-- Đóng cửa sổ ứng dụng **không** thoát ứng dụng; nó vẫn chạy ở khay để tiếp tục tải. Muốn thoát hẳn, chuột phải biểu tượng ở khay → **Quit X-OR S3 Client**.
+- Đóng cửa sổ ứng dụng **không** thoát ứng dụng; nó vẫn chạy ở khay để tiếp tục tải. Muốn thoát hẳn, chuột phải biểu tượng ở khay → **Quit X-OR Data**.
 - Ứng dụng tự khởi động (ẩn ở khay) khi đăng nhập máy, để menu chuột phải dùng được ngay.
 
 Bật/tắt menu chuột phải, tự khởi động và quản lý các đích đã ghim ở **Settings → Right-click upload**:
@@ -204,9 +205,115 @@ Dùng tính năng này để sao lưu một thư mục trên máy lên bucket.
 
 Đồng bộ chỉ chép một chiều từ máy lên bucket, **không bao giờ xoá** file trên máy hay trên bucket.
 
-Bấm **SAVE AS A JOB** để lưu lại và chạy định kỳ (ví dụ mỗi giờ). Các job được quản lý ở mục **Jobs** và chạy khi ứng dụng đang chạy, kể cả khi ẩn ở khay hệ thống.
+Muốn chạy lại định kỳ, bấm **SAVE AS A SYNC JOB…** để lưu thành một job đồng bộ, xem [mục 9](#9-đồng-bộ-và-sao-lưu-3-2-1). Các job lưu ở mục **Jobs** của bản cũ được tự chuyển sang mục **Sync**.
 
-## 9. Cài đặt ứng dụng
+## 9. Đồng bộ và sao lưu 3-2-1
+
+Mục **Sync** ở thanh bên giúp giữ nhiều bản dữ liệu theo quy tắc **3-2-1**: 3 bản dữ liệu, trên 2 loại lưu trữ khác nhau, 1 bản ở nơi khác. Bản trên X-OR Object Storage là bản ở ngoài văn phòng; bản thứ hai có thể là ổ USB, ổ ngoài, NAS, một server khác, OneDrive hoặc Google Drive.
+
+![Danh sách job và trạng thái 3-2-1](images/13-sync-jobs.png)
+
+### 9.1 Job, nơi kết nối và chế độ
+
+- **Job** nối một nơi với một bucket/thư mục trên X-OR và chạy **một chiều**: **Back up to X-OR** (từ nơi đó lên X-OR) hoặc **Copy from X-OR** (từ X-OR về nơi đó). Không đồng bộ hai chiều, và không chép thẳng giữa hai nơi ngoài (ví dụ OneDrive sang Google Drive).
+- **Nơi** có thể là:
+
+  | Nơi | Cách kết nối | Ghi chú |
+  | --- | --- | --- |
+  | Thư mục trên máy | Chọn thư mục | Ổ trong, USB, ổ ngoài, NAS đã gắn vào máy. Ổ chưa cắm thì lượt chạy được bỏ qua, không bao giờ bị coi là thư mục trống. |
+  | Server SFTP | Địa chỉ, user, mật khẩu hoặc private key | Khoá nhận diện server (host key) được ghi lại lần đầu và kiểm tra mỗi lần chạy. |
+  | Server SMB (Windows share, NAS) | Địa chỉ, user, mật khẩu, domain | Kết nối trực tiếp bằng tài khoản riêng, không cần map ổ mạng. |
+  | WebDAV (Nextcloud, ownCloud, SharePoint) | Địa chỉ `https://`, user, mật khẩu | Chỉ hỗ trợ `https`. |
+  | FTPS | Địa chỉ, user, mật khẩu, TLS explicit/implicit | FTP không mã hoá không được hỗ trợ. |
+  | OneDrive / SharePoint | Đăng nhập Microsoft | Tài khoản cá nhân hoặc công ty (Microsoft 365). |
+  | Google Drive | Đăng nhập Google | Tài khoản cá nhân hoặc Google Workspace, kể cả Shared drive. Docs/Sheets/Slides được lưu thành `.docx`/`.xlsx`/`.pptx`. |
+
+- **Chế độ**:
+  - **Copy** (khuyến nghị): thêm file mới, cập nhật file đã đổi, **không xoá** gì ở đích. Có thể chọn *Only add files that are missing* để không bao giờ ghi đè.
+  - **Mirror**: làm đích giống hệt nguồn. File bị xoá hoặc ghi đè ở đích **không mất**: được chuyển vào thư mục `.xor-archive/<ngày giờ>` ở đích và giữ 30 ngày, hoặc thành phiên bản cũ nếu bucket X-OR bật versioning.
+
+Mật khẩu, passphrase và phiên đăng nhập OneDrive/Google được lưu trong kho khoá của hệ điều hành, không ghi ra file.
+
+### 9.2 Thêm kết nối
+
+1. Mở **Sync → Connections → ADD CONNECTION**.
+2. Chọn loại, nhập địa chỉ và tài khoản. Nên dùng một tài khoản riêng cho sao lưu, chỉ có quyền ở các thư mục cần thiết.
+3. Với **OneDrive** / **Google Drive**: chọn quyền
+   - **Read only**: chỉ sao lưu từ OneDrive/Google Drive lên X-OR (an toàn nhất);
+   - **Read and write**: cho phép cả chép hoặc khôi phục từ X-OR vào đó.
+
+   Bấm **SIGN IN WITH MICROSOFT / GOOGLE**, đăng nhập trong trình duyệt rồi quay lại ứng dụng, chọn ổ (OneDrive của bạn, thư viện SharePoint hoặc Shared drive).
+4. Bấm **TEST** để thử (hiện các thư mục ở cấp đầu), rồi **SAVE**.
+
+![Danh sách kết nối](images/16-sync-connections.png)
+
+### 9.3 Tạo job và lên lịch
+
+1. **Sync → NEW JOB**.
+2. Đặt tên, chọn chiều (**Back up to X-OR** hoặc **Copy from X-OR**).
+3. Chọn nơi: **Folder on this computer** rồi **CHOOSE FOLDER**, hoặc một kết nối rồi bấm vào thư mục cần dùng.
+4. Chọn profile, bucket và thư mục trên X-OR (có thể tạo thư mục mới).
+5. Chọn **Copy** hoặc **Mirror**, các mẫu file bỏ qua (mặc định bỏ `*.tmp`, `~$*`, `.DS_Store`, `Thumbs.db`, `desktop.ini`).
+6. Chọn lịch: chỉ chạy tay, lặp lại mỗi 15 phút – 24 giờ, hằng ngày hoặc hằng tuần vào giờ cố định. Có thể giới hạn băng thông.
+7. Bấm **CREATE JOB**.
+
+![Tạo job đồng bộ](images/14-sync-new-job.png)
+
+- Job theo lịch chạy khi ứng dụng đang chạy (ứng dụng tự khởi động cùng máy và nằm ở khay hệ thống). Nếu máy tắt hoặc ngủ đúng giờ, job chạy bù khi máy bật lại.
+- Chạy tay bằng **RUN NOW** trên từng job, hoặc từ menu khay hệ thống: biểu tượng X-OR → **Run sync job now**.
+- **PAUSE** tạm dừng lịch; **HISTORY** xem các lần chạy: số file đã chép, đã đưa vào lưu trữ, đã xoá, kết quả kiểm tra.
+- Mỗi lần chạy xong, các file vừa ghi được kiểm tra lại (hash hoặc kích thước). File nào không khớp sẽ được chép lại ở lần sau.
+
+### 9.4 Chốt chặn ransomware
+
+Trước khi ghi bất cứ thứ gì, mỗi lần chạy (cả hai chiều) đều quét hai bên, chạy thử để biết sẽ thêm, ghi đè, xoá những file nào, và đọc thử một số file sẽ được ghi. Lần chạy **dừng lại, chưa ghi gì** nếu thấy:
+
+- quá **20%** số file (khi có từ 20 file thay đổi trở lên) hoặc quá **500** file bị ghi đè hoặc xoá trong một lần (chỉnh được trong mục *Ransomware guard* của job);
+- file có tên kiểu thư đòi tiền chuộc (`HOW_TO_DECRYPT…`, `…RESTORE_FILES…`), hoặc nhiều file có đuôi của ransomware hay bị gắn thêm một đuôi lạ hàng loạt;
+- file Word/Excel/PDF/ảnh/văn bản không còn đúng định dạng, nội dung trông như đã bị mã hoá;
+- tổng dung lượng nguồn thay đổi đột ngột (từ 50%), hoặc nguồn trống trong khi đích đang có file (ổ hỏng, ổ nhầm).
+
+![Xem lại lần chạy bị chặn](images/15-sync-guard.png)
+
+Khi bị chặn, ứng dụng hiện thông báo, đích vẫn giữ nguyên bản cũ, và các lần chạy theo lịch của job đó **chờ bạn quyết định**. Bấm **REVIEW** để xem lý do và file ví dụ:
+
+- Nếu thay đổi là của bạn (ví dụ vừa sắp xếp lại thư mục, xuất lại nhiều file): tick xác nhận và bấm **CONTINUE WITH THESE CHANGES**. Các file bị ghi đè hoặc xoá vẫn được giữ trong `.xor-archive` hoặc thành phiên bản cũ trên X-OR.
+- Nếu không: bấm **KEEP IT STOPPED**, ngắt máy hoặc server khỏi mạng, kiểm tra virus, rồi khôi phục dữ liệu như trước khi bị mã hoá ([mục 9.5](#95-khôi-phục-hoặc-tải-về-ổ-bất-kỳ)).
+
+Các lớp bảo vệ khác:
+
+- **Không xoá thật ở đích**: dùng thư mục `.xor-archive` (giữ 30 ngày) hoặc phiên bản cũ trên X-OR; số file được xoá trong một lần không vượt quá kế hoạch đã kiểm tra.
+- **Khuyến nghị cho bucket sao lưu**: bật **versioning** và **Object Lock** (liên hệ X-OR Cloud). Khi đó kể cả kẻ tấn công lấy được access key cũng không xoá được bản cũ.
+- **Quyền tối thiểu**: dùng access key riêng cho job sao lưu, không có quyền xoá phiên bản; kết nối OneDrive/Google Drive ở chế độ *Read only* khi chỉ sao lưu lên X-OR; tài khoản server riêng cho sao lưu.
+- Không dùng ổ mạng đã map thành ổ chữ cái (Z:, Y:) làm nguồn hay đích: ransomware trên máy mã hoá được các ổ đó. Hãy thêm kết nối SMB thay vì map ổ.
+
+### 9.5 Khôi phục hoặc tải về ổ bất kỳ
+
+Dùng để lấy dữ liệu từ X-OR ra một ổ USB mang đi, hoặc khôi phục sau sự cố.
+
+1. **Sync → RESTORE OR DOWNLOAD**.
+2. Chọn profile, bucket, thư mục trên X-OR.
+3. Chọn **The current files** (bản hiện tại) hoặc **The files as they were at a point in time** và chọn ngày giờ trước khi xảy ra sự cố (cần bucket bật versioning).
+4. Chọn nơi nhận: thư mục trên máy (ổ trong, USB, ổ ngoài…) hoặc một kết nối có quyền ghi (server, OneDrive, Google Drive).
+5. Bấm **START**. Tiến độ hiện ở đầu trang Sync và trong **History**. File sẵn có ở nơi nhận mà bị ghi đè được chuyển vào `.xor-archive` trước.
+
+![Khôi phục từ X-OR](images/17-sync-restore.png)
+
+Muốn giữ một bản trên ổ ngoài theo lịch, tạo job **Copy from X-OR** tới ổ đó.
+
+### 9.6 Trạng thái 3-2-1
+
+Bảng **3-2-1 status** ở đầu trang Sync cho biết với mỗi nguồn đang được sao lưu:
+
+| Cột | Ý nghĩa |
+| --- | --- |
+| On X-OR | Đã sao lưu lên X-OR gần đây |
+| Second copy | Có job chép thư mục X-OR đó sang ổ, server hoặc dịch vụ khác |
+| Old versions | Bucket bật versioning, giữ bản cũ của file bị ghi đè hoặc xoá |
+| Object Lock | Bucket bật Object Lock, bản sao lưu không xoá được trong thời hạn khoá |
+| Last backup | Lần sao lưu thành công gần nhất; chuyển màu cảnh báo khi quá hạn (ví dụ ổ ngoài lâu chưa cắm) |
+
+## 10. Cài đặt ứng dụng
 
 Mở **Settings** ở thanh bên:
 
@@ -220,7 +327,7 @@ Mở **Settings** ở thanh bên:
 
 ![Giao diện tối và cài đặt](images/10-settings.png)
 
-## 10. Xử lý sự cố
+## 11. Xử lý sự cố
 
 | Hiện tượng | Cách xử lý |
 | --- | --- |
@@ -232,6 +339,12 @@ Mở **Settings** ở thanh bên:
 | Linux không thấy menu | GNOME Files: mở lại cửa sổ Files. Dolphin: đóng hẳn Dolphin rồi mở lại. |
 | Chọn đích đã ghim nhưng không thấy gì | Ứng dụng tải lên ẩn ở khay; xem tiến độ bằng cách bấm biểu tượng X-OR ở khay, mục **Uploads**. |
 | Đang tải file lớn thì mất mạng hoặc tắt máy | Mở lại ứng dụng: việc tải lên tự tiếp tục từ phần còn thiếu. Nếu đã báo lỗi, bấm **Retry**. |
+| Job đồng bộ báo **Skipped** | Thư mục hoặc ổ của job không có trên máy (ổ USB/ổ ngoài chưa cắm, NAS chưa gắn). Cắm ổ, job chạy lại ở lần kế tiếp, hoặc bấm **RUN NOW**. |
+| Job báo **Stopped by the ransomware guard** | Xem [mục 9.4](#94-chốt-chặn-ransomware): bấm **REVIEW**, chỉ tiếp tục khi chắc chắn thay đổi là của bạn. |
+| Job theo lịch không chạy | Ứng dụng phải đang chạy (biểu tượng X-OR ở khay hệ thống). Kiểm tra job không bị **Paused** hoặc đang chờ xem lại sau khi bị chặn. |
+| OneDrive công ty báo cần quản trị viên duyệt | Tổ chức chặn người dùng tự cấp quyền cho ứng dụng. Nhờ quản trị viên Microsoft 365 duyệt ứng dụng một lần cho cả tổ chức (với Google Workspace: cho phép ứng dụng trong phần kiểm soát truy cập API). |
+| SFTP báo lỗi host key | Khoá nhận diện của server khác với lần đầu: có thể server được cài lại, hoặc có kẻ giả mạo. Hỏi quản trị server; nếu đúng là server đã đổi khoá, xoá kết nối và thêm lại. |
+| Profile có nhãn **Locked** | Profile cũ không trỏ tới X-OR. Mở profile, nhập access key X-OR để chuyển, hoặc xoá. |
 | Danh sách không cập nhật | Bấm nút ⟳ để tải lại. Danh sách bucket được lưu tạm 30 phút để giảm số lượt gọi API. |
 | Cần gửi log cho hỗ trợ | **Settings → Data & Storage → Diagnostic Log File** để lấy đường dẫn file log. |
 
