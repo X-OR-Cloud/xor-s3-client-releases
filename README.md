@@ -15,6 +15,18 @@
 
 ![Màn hình duyệt dữ liệu](images/03-browse.png)
 
+## Video hướng dẫn
+
+**Hướng dẫn sử dụng** (2 phút): kết nối, đổi ngôn ngữ, duyệt và xem trước file, tải lên, tải lên bằng chuột phải, đồng bộ & sao lưu, cài đặt.
+
+[![Video hướng dẫn sử dụng X-OR Data](video/huong-dan-su-dung.webp)](video/huong-dan-su-dung.mp4)
+
+**Kết nối Google Drive** (1,5 phút): đăng nhập Google, chọn quyền và ổ, tạo job sao lưu Google Drive lên X-OR theo lịch.
+
+[![Video kết nối Google Drive](video/ket-noi-google-drive.webp)](video/ket-noi-google-drive.mp4)
+
+Ảnh động phát ngay trên trang. Bấm vào ảnh để mở bản MP4 nét hơn (tải về được).
+
 ## Mục lục
 
 1. [Cài đặt](#1-cài-đặt)
@@ -261,6 +273,8 @@ Mật khẩu, passphrase và phiên đăng nhập OneDrive/Google được lưu 
    Bấm **SIGN IN WITH MICROSOFT / GOOGLE**, đăng nhập trong trình duyệt rồi quay lại ứng dụng, chọn ổ (OneDrive của bạn, thư viện SharePoint hoặc Shared drive).
 4. Bấm **TEST** để thử (hiện các thư mục ở cấp đầu), rồi **SAVE**.
 
+Xem từng bước kết nối Google Drive và tạo job sao lưu trong [video kết nối Google Drive](video/ket-noi-google-drive.mp4).
+
 ![Danh sách kết nối](images/16-sync-connections.png)
 
 ### 9.3 Tạo job và lên lịch
@@ -333,7 +347,7 @@ Bảng **3-2-1 status** ở đầu trang Sync cho biết với mỗi nguồn đa
 
 Mở **Settings** (Cài đặt) ở thanh bên:
 
-- **Language** (Ngôn ngữ): **System** (Theo hệ thống) dùng ngôn ngữ của máy, hoặc chọn **English** / **Tiếng Việt**. Menu khay hệ thống, thông báo và menu chuột phải trong trình quản lý file đổi theo.
+- **Language** (Ngôn ngữ): **System** (Theo hệ thống, mặc định) dùng ngôn ngữ của máy, hoặc chọn **English** / **Tiếng Việt**. Đổi nhanh bằng nút **VI / EN** cạnh nút ☀/☾ ở góc trên bên phải. Menu khay hệ thống, thông báo và menu chuột phải trong trình quản lý file đổi theo.
 - **Theme** (Chủ đề): giao diện Sáng, Tối hoặc theo hệ thống. Nút ☀/☾ ở góc trên bên phải đổi nhanh.
 - **Right-click upload** (Tải lên bằng chuột phải): bật/tắt menu **Upload with X-OR Data** (Tải lên bằng X-OR Data) trong trình quản lý file, tự khởi động cùng máy, và bỏ ghim các đích (xem [mục 5](#5-tải-lên-bằng-chuột-phải)). Trên macOS, mục này hiện cảnh báo nếu ứng dụng đang chạy từ vị trí tạm (xem [mục 11](#11-xử-lý-sự-cố)).
 - **Max Concurrent Transfers** (Số lượt truyền tải đồng thời tối đa): số file tải lên/tải xuống cùng lúc.
