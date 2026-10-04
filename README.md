@@ -17,7 +17,7 @@
 
 ## Video hướng dẫn
 
-**Hướng dẫn sử dụng** (2 phút): kết nối, đổi ngôn ngữ, duyệt và xem trước file, tải lên, tải lên bằng chuột phải, đồng bộ & sao lưu, cài đặt.
+**Hướng dẫn sử dụng** (2,5 phút): kết nối, đổi ngôn ngữ, duyệt và xem trước file, tìm file trong mọi bucket, tải lên, tải lên bằng chuột phải, đồng bộ & sao lưu, cài đặt.
 
 [![Video hướng dẫn sử dụng X-OR Data](video/huong-dan-su-dung.webp)](video/huong-dan-su-dung.mp4)
 
@@ -121,7 +121,8 @@ Có thể thêm nhiều profile (ví dụ môi trường thử nghiệm và chí
 
 - **Thanh bên trái** liệt kê các bucket của profile đang chọn. Bấm vào một bucket để mở.
 - **Bấm vào thư mục** để đi vào bên trong, dùng nút ← để quay lại.
-- **Ô đường dẫn** phía trên cho phép đi thẳng tới một vị trí, ví dụ `s3://du-an-2026/bao-cao/`. Cách này cũng dùng được khi tài khoản của bạn chỉ có quyền vào một số bucket nhất định.
+- **Ô tìm kiếm** trên cùng tìm file theo tên hoặc đường dẫn trong **mọi bucket** của profile đang chọn (phím tắt Ctrl/⌘ + K). Kết quả hiện bucket, thư mục, dung lượng, phần khớp được tô sáng; bấm biểu tượng thư mục để mở nơi chứa file. Bucket rất lớn chỉ được tìm một phần (tối đa 100.000 object mỗi bucket), khi đó ứng dụng báo để bạn mở bucket và tìm trong thư mục.
+- Gõ một đường dẫn `s3://…` vào ô tìm kiếm để đi thẳng tới vị trí đó, ví dụ `s3://du-an-2026/bao-cao/`. Cách này cũng dùng được khi tài khoản của bạn chỉ có quyền vào một số bucket nhất định.
 - **Search current folder** tìm theo tên trong thư mục hiện tại. Tick **Deep Search** để tìm cả trong các thư mục con.
 - Bấm vào tên cột để sắp xếp theo tên, dung lượng hoặc ngày sửa.
 - Bấm ☆ cạnh bucket hoặc thư mục để đưa vào **Favorites**. Mục **Recent** lưu các vị trí đã mở gần đây.
@@ -347,7 +348,7 @@ Bảng **3-2-1 status** ở đầu trang Sync cho biết với mỗi nguồn đa
 
 Mở **Settings** (Cài đặt) ở thanh bên:
 
-- **Language** (Ngôn ngữ): **System** (Theo hệ thống, mặc định) dùng ngôn ngữ của máy, hoặc chọn **English** / **Tiếng Việt**. Đổi nhanh bằng nút **VI / EN** cạnh nút ☀/☾ ở góc trên bên phải. Menu khay hệ thống, thông báo và menu chuột phải trong trình quản lý file đổi theo.
+- **Language** (Ngôn ngữ): **System** (Theo hệ thống, mặc định) dùng ngôn ngữ của máy, hoặc chọn **English** / **Tiếng Việt**. Đổi nhanh bằng thanh chọn **EN | VI** cạnh nút ☀/☾ ở góc trên bên phải. Menu khay hệ thống, thông báo và menu chuột phải trong trình quản lý file đổi theo.
 - **Theme** (Chủ đề): giao diện Sáng, Tối hoặc theo hệ thống. Nút ☀/☾ ở góc trên bên phải đổi nhanh.
 - **Right-click upload** (Tải lên bằng chuột phải): bật/tắt menu **Upload with X-OR Data** (Tải lên bằng X-OR Data) trong trình quản lý file, tự khởi động cùng máy, và bỏ ghim các đích (xem [mục 5](#5-tải-lên-bằng-chuột-phải)). Trên macOS, mục này hiện cảnh báo nếu ứng dụng đang chạy từ vị trí tạm (xem [mục 11](#11-xử-lý-sự-cố)).
 - **Max Concurrent Transfers** (Số lượt truyền tải đồng thời tối đa): số file tải lên/tải xuống cùng lúc.
