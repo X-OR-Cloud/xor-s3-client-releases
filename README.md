@@ -5,10 +5,10 @@
 <h1 align="center">X-OR Data</h1>
 
 <p align="center">
-  Ứng dụng desktop để quản lý dữ liệu trên <b>X-OR Object Storage</b> ngay trên máy tính cá nhân.<br>
+  Ứng dụng desktop để quản lý dữ liệu trên <b>X-OR Object Storage</b> (và các dịch vụ tương thích S3 khác) ngay trên máy tính cá nhân.<br>
   Chuột phải vào file trong Explorer / Finder để tải thẳng lên bucket.<br>
   Đồng bộ và sao lưu 3-2-1 với ổ đĩa, server, OneDrive, Google Drive, có chốt chặn ransomware.<br>
-  macOS · Windows · Linux
+  macOS · Windows · Linux · Tiếng Việt / English
 </p>
 
 > Trang này chứa **bộ cài đặt** và **hướng dẫn sử dụng** X-OR Data. Tải về không cần tài khoản GitHub.
@@ -39,7 +39,7 @@ Tải bộ cài theo máy của bạn. Các link luôn trỏ tới phiên bản 
 | --- | --- |
 | macOS chip Intel | [xor-data_macos_x64.dmg](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_macos_x64.dmg) |
 | macOS Apple Silicon (M1–M4) | [xor-data_macos_arm64.dmg](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_macos_arm64.dmg) |
-| Windows 10/11 | [xor-data_windows_x64-setup.exe](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64-setup.exe) hoặc [.msi](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64.msi) |
+| Windows 10/11 | [xor-data_windows_x64-setup.exe](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64-setup.exe) (khuyến nghị) |
 | Windows (không cần cài) | [xor-data_windows_x64-portable.zip](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_windows_x64-portable.zip) |
 | Ubuntu / Debian | [xor-data_linux_amd64.deb](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_amd64.deb) |
 | Fedora / RHEL | [xor-data_linux_x86_64.rpm](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/xor-data_linux_x86_64.rpm) |
@@ -48,9 +48,9 @@ Tải bộ cài theo máy của bạn. Các link luôn trỏ tới phiên bản 
 
 Mã kiểm tra SHA-256 của từng file: [SHA256SUMS.txt](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest/download/SHA256SUMS.txt).
 
-**macOS:** mở file `.dmg`, kéo **X-OR Data** vào thư mục **Applications**, rồi mở từ Launchpad. Ứng dụng đã được ký bằng chứng thư Developer ID của X-OR Cloud và được Apple công chứng (notarized), nên mở được ngay mà không cần thao tác thêm.
+**macOS:** mở file `.dmg`, kéo **X-OR Data** vào thư mục **Applications**, rồi mở từ Launchpad. Đừng mở ứng dụng thẳng từ file `.dmg` hay thư mục Downloads: khi đó macOS chạy nó từ một vị trí tạm và menu chuột phải trong Finder không ổn định. Ứng dụng đã được ký bằng chứng thư Developer ID của X-OR Cloud và được Apple công chứng (notarized), nên mở được ngay mà không cần thao tác thêm.
 
-**Windows:** chạy file `-setup.exe`, sau đó mở **X-OR Data** từ Start menu. Nếu Windows SmartScreen hiện cảnh báo, chọn **More info → Run anyway**. Bộ cài đã kèm sẵn WebView2 nên cài được cả trên máy không có Internet.
+**Windows:** chạy file `-setup.exe`, sau đó mở **X-OR Data** từ Start menu. Nếu Windows SmartScreen hiện cảnh báo, chọn **More info → Run anyway**. Bộ cài đã kèm sẵn WebView2 nên cài được cả trên máy không có Internet. Nếu cần bộ cài `.msi`, lấy ở [trang tải](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest) (nếu có).
 
 **Linux:**
 
@@ -61,6 +61,8 @@ sudo dnf install ./xor-data_linux_x86_64.rpm     # Fedora / RHEL
 
 Sau khi cài, mở **X-OR Data** từ menu ứng dụng. Với AppImage: `chmod +x xor-data_linux_amd64.AppImage` rồi chạy trực tiếp.
 
+**Ngôn ngữ giao diện:** ứng dụng có giao diện tiếng Việt và tiếng Anh. Mặc định ứng dụng theo ngôn ngữ của máy (máy đặt tiếng Việt thì hiện tiếng Việt, còn lại là tiếng Anh); đổi ở **Settings → Appearance → Language** (Cài đặt → Giao diện → Ngôn ngữ). Menu khay hệ thống, thông báo và menu chuột phải trong trình quản lý file cũng đổi theo. Hướng dẫn này ghi tên nút và menu theo giao diện tiếng Anh, kèm tên tiếng Việt trong ngoặc ở những chỗ cần, ví dụ **CONNECT ACCOUNT** (Kết nối tài khoản).
+
 **Nhúng link tải vào website:** các link trong bảng trên là cố định và luôn trỏ tới bản mới nhất, nên chỉ cần nhúng một lần, ví dụ:
 
 ```html
@@ -69,28 +71,39 @@ Sau khi cài, mở **X-OR Data** từ menu ứng dụng. Với AppImage: `chmod 
 
 ## 2. Kết nối X-OR Object Storage
 
-Ứng dụng đã cài sẵn endpoint X-OR Object Storage (`https://s3.xorcloud.net`). Bạn chỉ cần **Access Key ID** và **Secret Access Key** do X-OR Cloud cấp.
+Ứng dụng đã cài sẵn endpoint X-OR Object Storage (`https://s3.xorcloud.net`). Bạn chỉ cần **Access key ID** và **Secret access key** do X-OR Cloud cấp.
 
 ![Màn hình chào](images/01-welcome.png)
 
-1. Mở ứng dụng, bấm **CONNECT ACCOUNT**, sau đó **CREATE NEW PROFILE**.
-2. Form có sẵn endpoint `https://s3.xorcloud.net` và tên profile `X-OR S3`. Nhập:
+1. Mở ứng dụng, bấm **CONNECT ACCOUNT** (Kết nối tài khoản), sau đó **CREATE PROFILE** (Tạo profile).
+2. Ô **Storage provider** (Nhà cung cấp lưu trữ) để sẵn **X-OR Object Storage (s3.xorcloud.net)** với endpoint cố định `https://s3.xorcloud.net`, tên profile mặc định là `X-OR S3`. Nhập:
 
    | Trường | Nhập |
    | --- | --- |
-   | Access Key ID | Access key X-OR cấp |
-   | Secret Access Key | Secret key X-OR cấp |
-   | Profile Name | Giữ `X-OR S3` hoặc đặt tên khác, ví dụ `X-OR S3 · Dự án A` |
+   | Profile name (Tên profile) | Giữ `X-OR S3` hoặc đặt tên khác, ví dụ `X-OR S3 · Dự án A` |
+   | Access key ID | Access key X-OR cấp |
+   | Secret access key | Secret key X-OR cấp |
 
-3. Bấm **TEST CONNECTION** để kiểm tra, rồi **CONNECT ACCOUNT** để lưu.
+3. Bấm **TEST CONNECTION** (Kiểm tra kết nối) để kiểm tra, rồi **CONNECT** (Kết nối) để lưu. Khi sửa một profile có sẵn, nút này là **SAVE PROFILE** (Lưu profile).
 
 ![Thêm kết nối](images/02-connect.png)
 
-Ứng dụng **chỉ kết nối tới X-OR Object Storage**. Profile tạo từ bản cũ trỏ tới AWS hoặc S3 khác vẫn hiện trong danh sách nhưng có nhãn **Locked**: mở profile đó để nhập access key X-OR (chuyển sang X-OR), hoặc xoá đi.
+**Dịch vụ tương thích S3 khác:** X-OR Object Storage là lựa chọn mặc định và được khuyến nghị, nhưng ứng dụng dùng được với mọi dịch vụ tương thích S3 (MinIO, Ceph, Wasabi, Cloudflare R2…). Ở ô **Storage provider**, chọn **Other S3-compatible service (enter the endpoint)** (Dịch vụ tương thích S3 khác (tự nhập endpoint)) rồi nhập:
 
-> Secret Access Key được lưu trong kho khoá của hệ điều hành (Keychain trên macOS, Credential Manager trên Windows, Secret Service trên Linux), không lưu dạng văn bản thường.
+| Trường | Nhập |
+| --- | --- |
+| Endpoint URL | Địa chỉ dịch vụ, ví dụ `https://s3.ap-southeast-1.wasabisys.com` hoặc `https://minio.local:9000` (ghi thêm cổng nếu không phải 443). Endpoint `http://` vẫn dùng được nhưng ứng dụng sẽ cảnh báo vì khoá và dữ liệu được gửi không mã hoá; chỉ dùng trong mạng nội bộ tin cậy. |
+| Region | Region dịch vụ dùng để ký yêu cầu; `us-east-1` dùng được với hầu hết dịch vụ. |
+| Access key ID, Secret access key | Cặp khoá do nhà cung cấp dịch vụ cấp |
+| Path-style addressing (Địa chỉ kiểu path-style) | Bật (mặc định): `endpoint/bucket/key`, dùng được với MinIO, Ceph, Wasabi, Cloudflare R2. Tắt: `bucket.endpoint/key`, cho dịch vụ chỉ nhận kiểu virtual-hosted. |
 
-Có thể thêm nhiều kết nối (ví dụ môi trường thử nghiệm và chính thức) và chuyển qua lại bằng ô chọn profile ở góc trên bên phải.
+Job đồng bộ ([mục 9](#9-đồng-bộ-và-sao-lưu-3-2-1)) dùng được với profile của X-OR lẫn của dịch vụ khác.
+
+Profile tạo từ bản cũ dùng thông tin đăng nhập AWS trên máy (biến môi trường, profile trong `~/.aws`, SSO) vẫn hiện trong danh sách nhưng có nhãn **Not supported** (Không hỗ trợ): mở profile đó, chọn X-OR Object Storage hoặc dịch vụ tương thích S3 khác rồi nhập access key để chuyển, hoặc xoá đi.
+
+> Secret access key được lưu trong kho khoá của hệ điều hành (Keychain trên macOS, Credential Manager trên Windows, Secret Service trên Linux), không lưu dạng văn bản thường.
+
+Có thể thêm nhiều profile (ví dụ môi trường thử nghiệm và chính thức, hoặc X-OR và một dịch vụ khác): mở ô chọn profile ở góc trên bên phải → **Manage Profiles** (Quản lý profile) → **ADD ANOTHER PROFILE** (Thêm profile khác). Chuyển qua lại giữa các profile cũng bằng ô chọn này.
 
 ## 3. Duyệt bucket và thư mục
 
@@ -103,71 +116,71 @@ Có thể thêm nhiều kết nối (ví dụ môi trường thử nghiệm và 
 
 ## 4. Tải lên và tải xuống
 
-**Tải lên:** bấm **UPLOAD** và chọn:
+**Tải lên:** bấm **UPLOAD** (Tải lên) và chọn:
 
-- **Files**: chọn một hoặc nhiều file
-- **Folder**: tải cả thư mục, giữ nguyên cấu trúc
-- **Import from URLs**: tải file từ đường link trên mạng vào bucket
-- **Sync local folder...**: đồng bộ một thư mục trên máy (xem [mục 8](#8-đồng-bộ-thư-mục))
+- **Files** (File): chọn một hoặc nhiều file
+- **Folder** (Thư mục): tải cả thư mục, giữ nguyên cấu trúc
+- **Import from URLs** (Nhập từ URL): tải file từ đường link trên mạng vào bucket
+- **Sync local folder...** (Đồng bộ thư mục trên máy...): đồng bộ một thư mục trên máy (xem [mục 8](#8-đồng-bộ-thư-mục))
 
 Bạn cũng có thể kéo thả file hoặc thư mục từ máy vào cửa sổ ứng dụng.
 
 ![Menu tải lên](images/04-upload-menu.png)
 
-**Tải xuống:** bấm nút **⋮** ở cuối dòng và chọn **Download**. Với thư mục, chọn **Download Folder**. Muốn tải nhiều mục một lúc, tick ô bên trái các dòng rồi dùng thanh thao tác hàng loạt.
+**Tải xuống:** chuột phải vào dòng (hoặc bấm nút **⋮** ở cuối dòng) và chọn **Download** (Tải xuống). Với thư mục, chọn **Download Folder** (Tải xuống thư mục). Muốn tải nhiều mục một lúc, tick ô bên trái các dòng rồi dùng thanh thao tác hàng loạt.
 
-**Theo dõi tiến độ:** mục **Uploads** và **Downloads** ở thanh bên hiển thị tốc độ, phần trăm và thời gian của từng file. Ô **Transfers** ở góc dưới bên phải cho biết số tác vụ đang chạy.
+**Theo dõi tiến độ:** mục **Uploads** (Tải lên) và **Downloads** (Tải xuống) ở thanh bên hiển thị tốc độ, phần trăm và thời gian của từng file. Ô **Transfers** (Truyền tải) ở góc dưới bên phải cho biết số tác vụ đang chạy.
 
 ![Theo dõi tải lên](images/05-transfers.png)
 
 **File lớn (trên 100 MB)** được chia thành nhiều phần (part) và tải lên song song, mặc định 4 phần cùng lúc:
 
 - Một phần bị lỗi mạng thì chỉ phần đó được gửi lại, không phải tải lại cả file.
-- Mất mạng lâu, tắt ứng dụng hay tắt máy giữa chừng: các phần đã lên bucket được giữ lại. Lần mở ứng dụng sau, việc tải lên **tự tiếp tục** từ phần còn thiếu. Nếu tác vụ đã báo lỗi, bấm **Retry** để tải tiếp.
+- Mất mạng lâu, tắt ứng dụng hay tắt máy giữa chừng: các phần đã lên bucket được giữ lại. Lần mở ứng dụng sau, việc tải lên **tự tiếp tục** từ phần còn thiếu. Nếu tác vụ đã báo lỗi, bấm **Retry** (Thử lại) để tải tiếp.
 - Nếu file trên máy bị sửa trong lúc đang tải, ứng dụng dừng lại và báo lỗi, không ghép lẫn nội dung cũ và mới.
 - Ứng dụng không bao giờ ghi đè một file đã có sẵn trên bucket khi tải lên.
 
 ## 5. Tải lên bằng chuột phải
 
-Không cần mở cửa sổ ứng dụng: chọn file hoặc thư mục trong trình quản lý file của máy, chuột phải và chọn **Upload to X-OR S3**. Ứng dụng chạy ẩn ở khay hệ thống (thanh menu trên macOS) và tải lên ở đó.
+Không cần mở cửa sổ ứng dụng: chọn file hoặc thư mục trong trình quản lý file của máy, chuột phải và chọn **Upload with X-OR Data** (Tải lên bằng X-OR Data). Ứng dụng chạy ẩn ở khay hệ thống (thanh menu trên macOS) và tải lên ở đó. Tên menu theo ngôn ngữ giao diện của ứng dụng (xem [mục 10](#10-cài-đặt-ứng-dụng)).
 
-Menu **Upload to X-OR S3** có:
+Menu **Upload with X-OR Data** có:
 
 - **Các đích đã ghim** (tối đa 5), ví dụ `X-OR S3 › backup-db › hang-ngay`. Chọn một đích là file bắt đầu tải lên ngay, không hỏi gì thêm.
-- **Choose destination…**: mở cửa sổ để chọn profile, bucket và thư mục đích.
+- **Choose destination…** (Chọn nơi tải lên…): mở cửa sổ để chọn profile, bucket và thư mục đích.
 
 ![Chọn nơi tải lên](images/11-right-click-upload.png)
 
-Trong cửa sổ **Upload to X-OR S3**:
+Trong cửa sổ **Upload with X-OR Data** (Tải lên bằng X-OR Data):
 
-1. Chọn một đích đã ghim, hoặc **Another destination** để chọn **Profile**, **Bucket** rồi bấm vào thư mục để đi vào. Gõ tên vào ô **New folder** và bấm **ADD** để tải vào một thư mục mới.
-2. Giữ tick **Pin this destination to the right-click menu** nếu muốn lần sau chọn thẳng đích này từ menu chuột phải.
-3. Bấm **UPLOAD**. Thư mục được tải lên kèm cấu trúc bên trong, ví dụ thư mục `anh-san-pham` vào `du-an-2026/` thành `du-an-2026/anh-san-pham/...`.
+1. Chọn một đích đã ghim, hoặc **Another destination** (Nơi tải lên khác) để chọn **Profile**, **Bucket** rồi bấm vào thư mục để đi vào. Gõ tên vào ô **New folder** (Thư mục mới) và bấm **ADD** (Thêm) để tải vào một thư mục mới.
+2. Giữ tick **Pin this destination to the right-click menu** (Ghim nơi tải lên này vào menu chuột phải) nếu muốn lần sau chọn thẳng đích này từ menu chuột phải.
+3. Bấm **UPLOAD** (Tải lên). Thư mục được tải lên kèm cấu trúc bên trong, ví dụ thư mục `anh-san-pham` vào `du-an-2026/` thành `du-an-2026/anh-san-pham/...`.
 
-**Vị trí menu trên từng hệ điều hành:**
+**Vị trí menu trên từng hệ điều hành** (giao diện tiếng Việt: thay **Upload with X-OR Data** bằng **Tải lên bằng X-OR Data**):
 
 | Hệ điều hành | Cách mở |
 | --- | --- |
-| Windows 10 | Chuột phải vào file/thư mục → **Upload to X-OR S3** |
-| Windows 11 | Chuột phải → **Show more options** (hoặc giữ Shift khi chuột phải) → **Upload to X-OR S3**. Cách khác: chuột phải → **Send to → Upload to X-OR S3** |
-| macOS | Chuột phải trong Finder → **Quick Actions** → **Upload to X-OR S3…** hoặc **Upload to X-OR S3 › *đích đã ghim***. Cũng có thể kéo file thả vào biểu tượng ứng dụng trên Dock, hoặc **Open With → X-OR Data** |
-| Ubuntu (GNOME Files) | Chuột phải → **Scripts** → **Upload to X-OR S3** |
-| KDE (Dolphin) | Chuột phải → **Actions** → **Upload to X-OR S3** |
+| Windows 10 | Chuột phải vào file/thư mục → **Upload with X-OR Data** |
+| Windows 11 | Chuột phải → **Show more options** (hoặc giữ Shift khi chuột phải) → **Upload with X-OR Data**. Cách khác: chuột phải → **Send to → Upload with X-OR Data** |
+| macOS | Chuột phải trong Finder → **Quick Actions** → **Upload with X-OR Data…** hoặc **Upload with X-OR Data › *đích đã ghim***. Cũng có thể kéo file thả vào biểu tượng ứng dụng trên Dock, hoặc **Open With → X-OR Data** |
+| Ubuntu (GNOME Files) | Chuột phải → **Scripts** → **Upload with X-OR Data** |
+| KDE (Dolphin) | Chuột phải → **Actions** → **Upload with X-OR Data** |
 
 Chọn nhiều file một lúc cũng được: ứng dụng gom thành một lần tải lên.
 
 **Khay hệ thống:** biểu tượng X-OR ở khay (góc dưới bên phải trên Windows, thanh menu trên macOS) cho biết tiến độ chung khi đang tải. Khi xong, hệ điều hành hiện thông báo. Bấm vào biểu tượng để mở lại cửa sổ.
 
-- Đóng cửa sổ ứng dụng **không** thoát ứng dụng; nó vẫn chạy ở khay để tiếp tục tải. Muốn thoát hẳn, chuột phải biểu tượng ở khay → **Quit X-OR Data**.
+- Đóng cửa sổ ứng dụng **không** thoát ứng dụng; nó vẫn chạy ở khay để tiếp tục tải. Muốn thoát hẳn, chuột phải biểu tượng ở khay → **Quit X-OR Data** (Thoát X-OR Data).
 - Ứng dụng tự khởi động (ẩn ở khay) khi đăng nhập máy, để menu chuột phải dùng được ngay.
 
-Bật/tắt menu chuột phải, tự khởi động và quản lý các đích đã ghim ở **Settings → Right-click upload**:
+Bật/tắt menu chuột phải, tự khởi động và quản lý các đích đã ghim ở **Settings → Right-click upload** (Cài đặt → Tải lên bằng chuột phải):
 
 ![Cài đặt tải lên bằng chuột phải](images/12-right-click-settings.png)
 
 ## 6. Xem và sửa file
 
-Bấm biểu tượng 👁 để xem trước ảnh, video, âm thanh, PDF và file văn bản. Dùng **PREVIOUS / NEXT** để chuyển qua file khác trong cùng thư mục.
+Bấm biểu tượng 👁, nhấp đúp vào file hoặc chọn **Preview** trong menu thao tác để xem trước ảnh, video, âm thanh, PDF và file văn bản. Dùng **PREVIOUS / NEXT** để chuyển qua file khác trong cùng thư mục.
 
 Với file văn bản (txt, json, yaml, code…), bấm **EDIT FILE** để sửa trực tiếp và lưu lại lên bucket. Nếu file đã bị người khác thay đổi trong lúc bạn sửa, ứng dụng sẽ báo và không ghi đè.
 
@@ -175,22 +188,25 @@ Với file văn bản (txt, json, yaml, code…), bấm **EDIT FILE** để sử
 
 ## 7. Thao tác với file
 
-Bấm **⋮** ở cuối mỗi dòng để mở menu:
+Chuột phải vào một dòng để mở menu thao tác ngay tại con trỏ, hoặc bấm **⋮** ở cuối dòng (cùng một menu):
 
 | Mục | Dùng để |
 | --- | --- |
-| Download | Tải file về máy |
-| Properties | Xem và sửa Content-Type, metadata |
-| Version history | Xem và khôi phục phiên bản cũ (nếu bucket bật versioning) |
-| Copy public URL | Lấy link công khai (khi bucket cho phép truy cập public) |
-| Permissions | Xem và đặt quyền truy cập (ACL) |
-| Get Presigned URL | Tạo link chia sẻ có thời hạn, người nhận không cần tài khoản |
-| Copy Filename / Key / S3 URI | Sao chép tên hoặc đường dẫn |
-| Rename / Delete | Đổi tên hoặc xoá (có xác nhận trước khi xoá) |
+| Preview (Xem trước) | Xem trước file; chỉ hiện với file xem trước được (ảnh, video, âm thanh, PDF, văn bản) |
+| Download (Tải xuống) | Tải file về máy |
+| Properties (Thuộc tính) | Xem và sửa Content-Type, metadata |
+| Version history (Lịch sử phiên bản) | Xem và khôi phục phiên bản cũ (nếu bucket bật versioning) |
+| Copy public URL (Sao chép URL công khai) | Lấy link công khai (khi bucket cho phép truy cập public) |
+| Permissions (Quyền truy cập) | Xem và đặt quyền truy cập (ACL) |
+| Get Presigned URL (Tạo presigned URL) | Tạo link chia sẻ có thời hạn, người nhận không cần tài khoản |
+| Copy Filename / Key / S3 URI (Sao chép tên file / key / S3 URI) | Sao chép tên hoặc đường dẫn |
+| Rename / Delete (Đổi tên / Xoá) | Đổi tên hoặc xoá (có xác nhận trước khi xoá) |
 
 ![Menu thao tác file](images/07-file-menu.png)
 
-Muốn tạo thư mục mới, bấm **NEW FOLDER**. Muốn sao chép file sang một tài khoản hoặc bucket khác, chọn file, bấm sao chép, chuyển sang profile đích rồi dán.
+Nhấp đúp vào thư mục để mở; nhấp đúp vào file để xem trước (file không xem trước được thì mở **Properties**).
+
+Muốn tạo thư mục mới, bấm **NEW FOLDER** (Thư mục mới). Muốn sao chép file sang một tài khoản hoặc bucket khác, chọn file, bấm sao chép, chuyển sang profile đích rồi dán.
 
 ## 8. Đồng bộ thư mục
 
@@ -209,13 +225,13 @@ Muốn chạy lại định kỳ, bấm **SAVE AS A SYNC JOB…** để lưu th�
 
 ## 9. Đồng bộ và sao lưu 3-2-1
 
-Mục **Sync** ở thanh bên giúp giữ nhiều bản dữ liệu theo quy tắc **3-2-1**: 3 bản dữ liệu, trên 2 loại lưu trữ khác nhau, 1 bản ở nơi khác. Bản trên X-OR Object Storage là bản ở ngoài văn phòng; bản thứ hai có thể là ổ USB, ổ ngoài, NAS, một server khác, OneDrive hoặc Google Drive.
+Mục **Sync** ở thanh bên giúp giữ nhiều bản dữ liệu theo quy tắc **3-2-1**: 3 bản dữ liệu, trên 2 loại lưu trữ khác nhau, 1 bản ở nơi khác. Bản trên object storage (X-OR Object Storage hoặc dịch vụ tương thích S3 khác) là bản ở ngoài văn phòng; bản thứ hai có thể là ổ USB, ổ ngoài, NAS, một server khác, OneDrive hoặc Google Drive.
 
 ![Danh sách job và trạng thái 3-2-1](images/13-sync-jobs.png)
 
 ### 9.1 Job, nơi kết nối và chế độ
 
-- **Job** nối một nơi với một bucket/thư mục trên X-OR và chạy **một chiều**: **Back up to X-OR** (từ nơi đó lên X-OR) hoặc **Copy from X-OR** (từ X-OR về nơi đó). Không đồng bộ hai chiều, và không chép thẳng giữa hai nơi ngoài (ví dụ OneDrive sang Google Drive).
+- **Job** nối một nơi với một bucket/thư mục trên object storage và chạy **một chiều**: **Back up to object storage** (từ nơi đó lên object storage) hoặc **Copy from object storage** (từ object storage về nơi đó). Không đồng bộ hai chiều, và không chép thẳng giữa hai nơi ngoài (ví dụ OneDrive sang Google Drive).
 - **Nơi** có thể là:
 
   | Nơi | Cách kết nối | Ghi chú |
@@ -239,8 +255,8 @@ Mật khẩu, passphrase và phiên đăng nhập OneDrive/Google được lưu 
 1. Mở **Sync → Connections → ADD CONNECTION**.
 2. Chọn loại, nhập địa chỉ và tài khoản. Nên dùng một tài khoản riêng cho sao lưu, chỉ có quyền ở các thư mục cần thiết.
 3. Với **OneDrive** / **Google Drive**: chọn quyền
-   - **Read only**: chỉ sao lưu từ OneDrive/Google Drive lên X-OR (an toàn nhất);
-   - **Read and write**: cho phép cả chép hoặc khôi phục từ X-OR vào đó.
+   - **Read only**: chỉ sao lưu từ OneDrive/Google Drive lên object storage (an toàn nhất);
+   - **Read and write**: cho phép cả chép hoặc khôi phục từ object storage vào đó.
 
    Bấm **SIGN IN WITH MICROSOFT / GOOGLE**, đăng nhập trong trình duyệt rồi quay lại ứng dụng, chọn ổ (OneDrive của bạn, thư viện SharePoint hoặc Shared drive).
 4. Bấm **TEST** để thử (hiện các thư mục ở cấp đầu), rồi **SAVE**.
@@ -250,9 +266,9 @@ Mật khẩu, passphrase và phiên đăng nhập OneDrive/Google được lưu 
 ### 9.3 Tạo job và lên lịch
 
 1. **Sync → NEW JOB**.
-2. Đặt tên, chọn chiều (**Back up to X-OR** hoặc **Copy from X-OR**).
+2. Đặt tên, chọn chiều (**Back up to object storage** hoặc **Copy from object storage**).
 3. Chọn nơi: **Folder on this computer** rồi **CHOOSE FOLDER**, hoặc một kết nối rồi bấm vào thư mục cần dùng.
-4. Chọn profile, bucket và thư mục trên X-OR (có thể tạo thư mục mới).
+4. Chọn profile, bucket và thư mục trên object storage (có thể tạo thư mục mới).
 5. Chọn **Copy** hoặc **Mirror**, các mẫu file bỏ qua (mặc định bỏ `*.tmp`, `~$*`, `.DS_Store`, `Thumbs.db`, `desktop.ini`).
 6. Chọn lịch: chỉ chạy tay, lặp lại mỗi 15 phút – 24 giờ, hằng ngày hoặc hằng tuần vào giờ cố định. Có thể giới hạn băng thông.
 7. Bấm **CREATE JOB**.
@@ -289,17 +305,17 @@ Các lớp bảo vệ khác:
 
 ### 9.5 Khôi phục hoặc tải về ổ bất kỳ
 
-Dùng để lấy dữ liệu từ X-OR ra một ổ USB mang đi, hoặc khôi phục sau sự cố.
+Dùng để lấy dữ liệu từ object storage ra một ổ USB mang đi, hoặc khôi phục sau sự cố.
 
-1. **Sync → RESTORE OR DOWNLOAD**.
-2. Chọn profile, bucket, thư mục trên X-OR.
+1. **Sync → RESTORE OR DOWNLOAD** để mở cửa sổ **Restore or download from object storage**.
+2. Chọn profile, bucket, thư mục trên object storage.
 3. Chọn **The current files** (bản hiện tại) hoặc **The files as they were at a point in time** và chọn ngày giờ trước khi xảy ra sự cố (cần bucket bật versioning).
 4. Chọn nơi nhận: thư mục trên máy (ổ trong, USB, ổ ngoài…) hoặc một kết nối có quyền ghi (server, OneDrive, Google Drive).
 5. Bấm **START**. Tiến độ hiện ở đầu trang Sync và trong **History**. File sẵn có ở nơi nhận mà bị ghi đè được chuyển vào `.xor-archive` trước.
 
 ![Khôi phục từ X-OR](images/17-sync-restore.png)
 
-Muốn giữ một bản trên ổ ngoài theo lịch, tạo job **Copy from X-OR** tới ổ đó.
+Muốn giữ một bản trên ổ ngoài theo lịch, tạo job **Copy from object storage** tới ổ đó.
 
 ### 9.6 Trạng thái 3-2-1
 
@@ -307,23 +323,24 @@ Bảng **3-2-1 status** ở đầu trang Sync cho biết với mỗi nguồn đa
 
 | Cột | Ý nghĩa |
 | --- | --- |
-| On X-OR | Đã sao lưu lên X-OR gần đây |
-| Second copy | Có job chép thư mục X-OR đó sang ổ, server hoặc dịch vụ khác |
+| In object storage | Đã sao lưu lên object storage gần đây |
+| Second copy | Có job chép thư mục đó từ object storage sang ổ, server hoặc dịch vụ khác |
 | Old versions | Bucket bật versioning, giữ bản cũ của file bị ghi đè hoặc xoá |
 | Object Lock | Bucket bật Object Lock, bản sao lưu không xoá được trong thời hạn khoá |
 | Last backup | Lần sao lưu thành công gần nhất; chuyển màu cảnh báo khi quá hạn (ví dụ ổ ngoài lâu chưa cắm) |
 
 ## 10. Cài đặt ứng dụng
 
-Mở **Settings** ở thanh bên:
+Mở **Settings** (Cài đặt) ở thanh bên:
 
-- **Theme**: giao diện Sáng, Tối hoặc theo hệ thống. Nút ☀/☾ ở góc trên bên phải đổi nhanh.
-- **Right-click upload**: bật/tắt menu **Upload to X-OR S3** trong trình quản lý file, tự khởi động cùng máy, và bỏ ghim các đích (xem [mục 5](#5-tải-lên-bằng-chuột-phải)).
-- **Max Concurrent Transfers**: số file tải lên/tải xuống cùng lúc.
-- **Parts per large file**: số phần của một file lớn được tải lên cùng lúc (1–16, mặc định 4). Tăng lên nếu đường truyền nhanh; giảm xuống nếu mạng yếu.
-- **Bandwidth per transfer**: giới hạn băng thông mỗi tác vụ (0 là không giới hạn). Khi có giới hạn, các phần của file lớn được tải lần lượt.
-- **Text Preview Size Limit**: dung lượng tối đa khi xem trước file văn bản.
-- **Data & Storage → Diagnostic Log File**: đường dẫn file log, dùng khi cần gửi cho bộ phận hỗ trợ. Ở đây cũng có nút xoá dữ liệu tạm (cache).
+- **Language** (Ngôn ngữ): **System** (Theo hệ thống) dùng ngôn ngữ của máy, hoặc chọn **English** / **Tiếng Việt**. Menu khay hệ thống, thông báo và menu chuột phải trong trình quản lý file đổi theo.
+- **Theme** (Chủ đề): giao diện Sáng, Tối hoặc theo hệ thống. Nút ☀/☾ ở góc trên bên phải đổi nhanh.
+- **Right-click upload** (Tải lên bằng chuột phải): bật/tắt menu **Upload with X-OR Data** (Tải lên bằng X-OR Data) trong trình quản lý file, tự khởi động cùng máy, và bỏ ghim các đích (xem [mục 5](#5-tải-lên-bằng-chuột-phải)). Trên macOS, mục này hiện cảnh báo nếu ứng dụng đang chạy từ vị trí tạm (xem [mục 11](#11-xử-lý-sự-cố)).
+- **Max Concurrent Transfers** (Số lượt truyền tải đồng thời tối đa): số file tải lên/tải xuống cùng lúc.
+- **Parts per large file** (Số phần tải song song của file lớn): số phần của một file lớn được tải lên cùng lúc (1–16, mặc định 4). Tăng lên nếu đường truyền nhanh; giảm xuống nếu mạng yếu.
+- **Bandwidth per transfer** (Băng thông mỗi lượt truyền tải): giới hạn băng thông mỗi tác vụ (0 là không giới hạn). Khi có giới hạn, các phần của file lớn được tải lần lượt.
+- **Text Preview Size Limit** (Giới hạn dung lượng xem trước văn bản): dung lượng tối đa khi xem trước file văn bản.
+- **Data & Storage → Diagnostic Log File** (Dữ liệu và lưu trữ → File log chẩn đoán): đường dẫn file log, dùng khi cần gửi cho bộ phận hỗ trợ. Ở đây cũng có nút xoá dữ liệu tạm (cache).
 
 ![Giao diện tối và cài đặt](images/10-settings.png)
 
@@ -331,11 +348,12 @@ Mở **Settings** ở thanh bên:
 
 | Hiện tượng | Cách xử lý |
 | --- | --- |
-| Không kết nối được | Kiểm tra máy truy cập được `https://s3.xorcloud.net` (VPN nếu cần), Access Key và Secret đúng. Bấm **TEST CONNECTION** để xem thông báo lỗi chi tiết. |
+| Không kết nối được | Kiểm tra máy truy cập được endpoint (`https://s3.xorcloud.net` với X-OR; VPN nếu cần), access key và secret key đúng. Với dịch vụ tương thích S3 khác, kiểm tra thêm **Region** và **Path-style addressing**. Bấm **TEST CONNECTION** (Kiểm tra kết nối) để xem thông báo lỗi chi tiết. |
 | Kết nối được nhưng không thấy bucket | Tài khoản có thể không có quyền liệt kê bucket. Gõ thẳng `s3://ten-bucket/` vào ô đường dẫn. |
 | `Access Denied` khi tải lên/xoá | Tài khoản chỉ có quyền đọc với bucket đó. Liên hệ X-OR Cloud để được cấp quyền. |
-| Windows 11 không thấy **Upload to X-OR S3** | Mục này nằm trong **Show more options** (hoặc Shift + chuột phải), hoặc dùng **Send to**. Kiểm tra **Settings → Right-click upload** đang bật. |
-| macOS không thấy Quick Action | Mở **System Settings → Privacy & Security → Extensions → Finder** (hoặc **Added Extensions**) và bật **Upload to X-OR S3**. Có thể cần mở lại Finder (Option + chuột phải biểu tượng Finder → Relaunch). |
+| Windows 11 không thấy **Upload with X-OR Data** (Tải lên bằng X-OR Data) | Mục này nằm trong **Show more options** (hoặc Shift + chuột phải), hoặc dùng **Send to**. Kiểm tra **Settings → Right-click upload** (Cài đặt → Tải lên bằng chuột phải) đang bật. |
+| macOS không thấy Quick Action | Mở **System Settings → Keyboard → Keyboard Shortcuts → Services → Files and Folders** (macOS tiếng Việt: **Cài đặt hệ thống → Bàn phím → Phím tắt bàn phím → Dịch vụ → Tệp và thư mục**) và bật **Upload with X-OR Data…** cùng các mục **Upload with X-OR Data › …**. Nếu vẫn không thấy, kiểm tra thêm **System Settings → Privacy & Security → Extensions → Finder** (hoặc **Added Extensions**). Sau đó mở lại Finder (Option + chuột phải biểu tượng Finder → **Relaunch**). |
+| macOS: **Settings → Right-click upload** báo ứng dụng đang chạy từ vị trí tạm | Ứng dụng được mở thẳng từ file `.dmg` hoặc từ thư mục Downloads nên macOS chạy nó từ một vị trí tạm (App Translocation); menu Finder và tự khởi động cùng máy sẽ không ổn định. Thoát ứng dụng (chuột phải biểu tượng ở khay → **Quit X-OR Data**), kéo **X-OR Data** vào **Applications** rồi mở từ đó. |
 | Linux không thấy menu | GNOME Files: mở lại cửa sổ Files. Dolphin: đóng hẳn Dolphin rồi mở lại. |
 | Chọn đích đã ghim nhưng không thấy gì | Ứng dụng tải lên ẩn ở khay; xem tiến độ bằng cách bấm biểu tượng X-OR ở khay, mục **Uploads**. |
 | Đang tải file lớn thì mất mạng hoặc tắt máy | Mở lại ứng dụng: việc tải lên tự tiếp tục từ phần còn thiếu. Nếu đã báo lỗi, bấm **Retry**. |
@@ -344,7 +362,7 @@ Mở **Settings** ở thanh bên:
 | Job theo lịch không chạy | Ứng dụng phải đang chạy (biểu tượng X-OR ở khay hệ thống). Kiểm tra job không bị **Paused** hoặc đang chờ xem lại sau khi bị chặn. |
 | OneDrive công ty báo cần quản trị viên duyệt | Tổ chức chặn người dùng tự cấp quyền cho ứng dụng. Nhờ quản trị viên Microsoft 365 duyệt ứng dụng một lần cho cả tổ chức (với Google Workspace: cho phép ứng dụng trong phần kiểm soát truy cập API). |
 | SFTP báo lỗi host key | Khoá nhận diện của server khác với lần đầu: có thể server được cài lại, hoặc có kẻ giả mạo. Hỏi quản trị server; nếu đúng là server đã đổi khoá, xoá kết nối và thêm lại. |
-| Profile có nhãn **Locked** | Profile cũ không trỏ tới X-OR. Mở profile, nhập access key X-OR để chuyển, hoặc xoá. |
+| Profile có nhãn **Not supported** (Không hỗ trợ) | Profile tạo từ bản cũ dùng thông tin đăng nhập AWS trên máy (biến môi trường, `~/.aws`, SSO). Mở profile, chọn X-OR Object Storage hoặc dịch vụ tương thích S3 khác rồi nhập access key để chuyển, hoặc xoá. |
 | Danh sách không cập nhật | Bấm nút ⟳ để tải lại. Danh sách bucket được lưu tạm 30 phút để giảm số lượt gọi API. |
 | Cần gửi log cho hỗ trợ | **Settings → Data & Storage → Diagnostic Log File** để lấy đường dẫn file log. |
 
