@@ -62,7 +62,7 @@ Mã kiểm tra SHA-256 của từng file: [SHA256SUMS.txt](https://github.com/X-
 
 **macOS:** mở file `.dmg`, kéo **X-OR Data** vào thư mục **Applications**, rồi mở từ Launchpad. Đừng mở ứng dụng thẳng từ file `.dmg` hay thư mục Downloads: khi đó macOS chạy nó từ một vị trí tạm và menu chuột phải trong Finder không ổn định. Ứng dụng đã được ký bằng chứng thư Developer ID của X-OR Cloud và được Apple công chứng (notarized), nên mở được ngay mà không cần thao tác thêm.
 
-**Windows:** chạy file `-setup.exe`, sau đó mở **X-OR Data** từ Start menu. Nếu Windows SmartScreen hiện cảnh báo, chọn **More info → Run anyway**. Bộ cài đã kèm sẵn WebView2 nên cài được cả trên máy không có Internet. Nếu cần bộ cài `.msi`, lấy ở [trang tải](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest) (nếu có).
+**Windows:** chạy file `-setup.exe`, sau đó mở **X-OR Data** từ Start menu. Nếu Windows SmartScreen hiện cảnh báo, chọn **More info → Run anyway**. Ứng dụng dùng WebView2 có sẵn trên Windows 11 và Windows 10 đã cập nhật; máy nào chưa có thì bộ cài tự tải WebView2 về (cần Internet lúc cài). Nếu cần bộ cài `.msi`, lấy ở [trang tải](https://github.com/X-OR-Cloud/xor-s3-client-releases/releases/latest) (nếu có).
 
 **Linux:**
 
